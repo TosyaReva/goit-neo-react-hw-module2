@@ -3,6 +3,7 @@ import Description from "./Description/Description";
 import Options from "./Options/Options";
 import Feedback from "./Feedback/Feedback";
 import css from "./App.module.css";
+import Notification from "./Notification/Notification";
 
 const defaultFeedbacks = {
   good: 0,
@@ -30,7 +31,7 @@ function App() {
     });
   };
 
-  const resetHanlder = () => setFeedbacks(defaultFeedbacks);
+  const resetHandler = () => setFeedbacks(defaultFeedbacks);
 
   const totalFeedback = Object.values(feedbacks).reduce(
     (acc, count) => acc + count,
@@ -45,7 +46,7 @@ function App() {
       <Options
         voteHandler={updateFeedback}
         totalFeedback={totalFeedback}
-        resetHanlder={resetHanlder}
+        resetHandler={resetHandler}
       />
       {totalFeedback ? (
         <Feedback
@@ -54,7 +55,7 @@ function App() {
           positiveFeedback={positiveFeedback}
         />
       ) : (
-        <p>No feedback yet</p>
+        <Notification>No feedback yet</Notification>
       )}
     </div>
   );

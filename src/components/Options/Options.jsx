@@ -1,6 +1,6 @@
 import css from "./Options.module.css";
 
-export default function Options({ voteHandler, totalFeedback, resetHanlder }) {
+export default function Options({ voteHandler, totalFeedback, resetHandler }) {
   return (
     <ul className={css["options-list"]}>
       <li>
@@ -41,7 +41,7 @@ export default function Options({ voteHandler, totalFeedback, resetHanlder }) {
           <button
             className={css["btn-reset"]}
             type="button"
-            onClick={resetHanlder}
+            onClick={resetHandler}
           >
             Reset
           </button>
